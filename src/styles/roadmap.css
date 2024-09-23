@@ -1,0 +1,104 @@
+.roadmap-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px; /* Space around the container */
+}
+
+.roadmap-node-wrapper {
+  position: relative;
+  width: 200px; /* Fixed width for nodes */
+  margin: 20px; /* Space between nodes */
+  text-align: center; 
+  /* Center the title */
+}
+
+.roadmap-node-card {
+  padding: 10px;
+  border: 2px solid #3d9846;
+  border-radius: 8px;
+  background-color: #eaeaea;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.roadmap-node-dialog {
+    position: absolute;
+    top: 100%; /* Below the card */
+    left: 50%;
+    width: 200px;
+    transform: translateX(-50%);
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 20; /* Higher z-index */
+  }
+
+.roadmap-connection-line {
+    position: relative; /* Ensure it positions relative to the parent */
+    height: 20px; /* Adjust height as needed */
+    margin-top: -10px; /* Move the line upwards to connect to the nodes */
+    display: flex;
+    justify-content: center; /* Center the line */
+  }
+  
+
+.roadmap-connection-line line {
+  stroke: #ccc;
+  stroke-width: 2;
+  width: 100%; /* Make the line full width */
+}
+
+.roadmap-row {
+    display: flex;
+    justify-content: space-around; /* Space evenly between nodes */
+    margin: 20px 0; /* Space between rows */
+    position: relative;
+  }
+/* create roadmaps */
+#user-specifications {
+    display: flex;
+    justify-content: center;
+}
+#user-specifications label {
+    margin: 20px
+}
+#skill-input {
+    height: 30px;
+    margin-left: 5px;
+    width: 200px;
+}
+#specs {
+    display: flex;
+    justify-content: center;
+}
+#specifications-input {
+    height: 50px;
+    margin-left: 10px;
+    width: 450px;
+}
+#RoadmapCreation {
+    text-align: center;
+}
+.roadmap-row {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 20px 0;
+  }
+  
+  .roadmap-node-card.completed {
+    background-color: #d4edda; /* Light green background */
+    border-color: #c3e6cb; /* Darker green border */
+    opacity: 0.6; /* Optional: make it slightly faded */
+  }
+  
+  button {
+    margin-top: 10px; /* Space above button */
+  }
+  .top-right-buttons {
+    display: flex;
+    justify-content: flex-end; /* Aligns buttons to the right */
+    margin-bottom: 20px; /* Adds space between buttons and the form */
+  }

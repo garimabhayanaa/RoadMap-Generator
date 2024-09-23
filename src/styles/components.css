@@ -1,0 +1,119 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #e2ecf6;
+  border-radius: 5px;
+  position: relative;
+  border: 1px solid rgb(177, 177, 177);
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-tabs {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-tabs li {
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.nav-tabs li:hover {
+  background-color: #e2e6ea;
+}
+
+.user-details {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+}
+
+.user-details.visible {
+  transform: translateX(0);
+}
+.sidebar {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.show {
+  transform: translateX(0);
+}
+
+.backdrop {
+  cursor: pointer;
+}
+.auth-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f7f7f7; /* Bootstrap primary color */
+  color: rgb(69, 67, 67);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-button:hover {
+  background-color: rgb(18, 17, 17);
+  color: white; 
+}
+.graph-container {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.126);
+}
+.tabs {
+  margin-top: 5px;
+}
+.roadmap-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.roadmap-card:hover {
+  transform: scale(1.05);
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+#notepad {
+  min-height: 500px;
+  margin: 20px;
+  max-height: auto;
+  width: 400px;
+}
