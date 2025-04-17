@@ -69,7 +69,7 @@ const CreateRoadmap = () => {
         "https://api.cohere.ai/v1/generate", // Correct endpoint
         {
           model: "command-xlarge", // Use a valid model name (check available models)
-          prompt: `Generate a roadmap for learning ${skill} with the following specification ${specification}. Please format each step as follows:\n\n1. Topic Title - Description\n\nFor example:\n1. JavaScript Basics - Learn about variables and functions.\n2. React Fundamentals - Understand components and state.`,
+          prompt: `Generate a roadmap for learning ${skill} with the following specification ${specification}. Please format each step as follows:\n\n1. Topic Title - Description\n\nFor example:\n1. JavaScript Basics - Learn about variables and functions.\n2. React Fundamentals - Understand components and state. Do not generate any extra text other than the steps.`,
           maxTokens: 1024,
           temperature: 0.9, // Optional, adjust as needed
         },
