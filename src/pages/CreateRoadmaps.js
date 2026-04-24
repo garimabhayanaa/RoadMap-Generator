@@ -7,7 +7,7 @@ const apiKey = process.env.REACT_APP_COHERE_API_KEY;
 
 
 const parseRoadmapText = (roadmapText) => {
-  const topics = roadmapText.split("\n\n"); // Split the text into topics using double newline characters
+  const topics = roadmapText.split("\n").filter(Boolean); // Split the text into topics using double newline characters
   return topics.map((topic) => {
     const [title, description] = topic.split(" - "); // Split each topic into title and description
     return { title, description };
@@ -82,7 +82,7 @@ const CreateRoadmap = () => {
       );
       console.log(response);
       const roadmapText = response.data.text;
-      const topics = roadmapText.split("\n").filter(Boolean);
+      const topics = parseRoadmapText(roadmapText);
       setRoadmap(topics);
     } catch (error) {
       setError(error.response ? error.response.data : error.message); // Improved error handling
