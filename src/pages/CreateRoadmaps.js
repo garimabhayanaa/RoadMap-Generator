@@ -66,12 +66,12 @@ const CreateRoadmap = () => {
 
     try {
       const response = await axios.post(
-        "https://api.cohere.ai/v1/generate", // Correct endpoint
+        "https://api.cohere.ai/v1/chat", 
         {
-          model: "command-xlarge", // Use a valid model name (check available models)
+          model: "command-r", 
           prompt: `Generate a roadmap for learning ${skill} with the following specification ${specification}. Please format each step as follows:\n\n1. Topic Title - Description\n\nFor example:\n1. JavaScript Basics - Learn about variables and functions.\n2. React Fundamentals - Understand components and state. Do not generate any extra text other than the steps.`,
           maxTokens: 1024,
-          temperature: 0.9, // Optional, adjust as needed
+          temperature: 0.5, 
         },
         {
           headers: {
@@ -81,8 +81,8 @@ const CreateRoadmap = () => {
         }
       );
       console.log(response);
-      const roadmapText = response.data.generations[0].text;
-      const topics = parseRoadmapText(roadmapText); // Access the generated text
+      const roadmapText = response.data.text;
+      const topics = roadmapText.split("\n").filter(Boolean);
       setRoadmap(topics);
     } catch (error) {
       setError(error.response ? error.response.data : error.message); // Improved error handling
