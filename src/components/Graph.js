@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ReactFlow, { addEdge, useNodesState, useEdgesState } from 'react-flow-renderer';
 import '../styles/components.css'; // Create this CSS file for styling
 
@@ -16,7 +16,6 @@ const initialEdges = [
 ];
 
 const Graph = () => {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   useEffect(() => {
