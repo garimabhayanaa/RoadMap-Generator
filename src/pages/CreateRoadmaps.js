@@ -7,11 +7,23 @@ const apiKey = process.env.REACT_APP_COHERE_API_KEY;
 
 
 const parseRoadmapText = (roadmapText) => {
-  const topics = roadmapText.split("\n").filter(Boolean); // Split the text into topics using double newline characters
-  return topics.map((topic) => {
-    const [title, description] = topic.split(" - "); // Split each topic into title and description
-    return { title, description };
-  });
+  return roadmapText
+    .split("\n")
+    .filter(Boolean)
+    .map((line) => {
+      let cleaned = line
+        .replace(/^\d+\.\s*/, "")   // remove numbering
+        .replace(/\*\*/g, "")       // remove bold
+        .replace(/\*/g, "")         // remove stray *
+        .trim();
+
+      const [title, description] = cleaned.split(" - ");
+
+      return {
+        title: title?.trim(),
+        description: description?.trim() || "",
+      };
+    });
 };
 
 const CreateRoadmap = () => {
